@@ -39,8 +39,8 @@ DESCRIPTION = docstrings[0]
 AUTHOR, EMAIL = re.match(r'(.*) <(.*)>', AUTHOR_EMAIL).groups()
 
 try:
-    from pypandoc import convert
-    read_md = lambda f: convert(f, 'rst')
+    from pypandoc import convert_file
+    read_md = lambda f: convert_file(f, 'rst')
 except ImportError:
     print('warning: pypandoc module not found, could not convert '
           'Markdown to RST')
